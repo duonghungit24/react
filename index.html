@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJs</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <div id='root'></div>
+    <script>    
+        //lm bang dom
+        // let h1 = document.createElement('h1');
+        // h1.className = 'hello';
+        // h1.innerText = "hello world"
+        // document.body.appendChild(h1);
+        // //lm bằng react 
+        // //React.createElement(type, properties, children)
+        // let h1React = document.createElement('h1', {
+        //     className: 'heading',
+        //     title: 'h1',
+        // }, 'hello react')
+        // //dom
+        // const ulDom = document.createElement('ul');
+        // const li1 = document.createElement('li');
+        // li1.innerText = "javascript";
+        // const li2 = document.createElement('li');
+        // li2.innerText = "react-js";
+        // ulDom.appendChild(li1);
+        // ulDom.appendChild(li2);
+        // document.body.appendChild(ulDom);
+        // //react 
+        // const ulReact = React.createElement('ul', null , 
+        //     React.createElement('li', null , 'javascipt'),
+        //     React.createElement('li' , null , 'reactjs')
+        // );
+        const div1 = React.createElement(
+            'div', 
+            {
+                className :'item',
+            },
+            React.createElement('h2' ,{ title: 'hoc react'} , 'react js'),
+            React.createElement('p', null, 'học reactjs cơ bản đến nâng cao')    
+        )
+        //get root
+        const root = document.querySelector('#root');
+        //render ui 
+        ReactDOM.render(div1, root);
+    </script>
+</body>
+</html>
