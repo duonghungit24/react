@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReactJs</title>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script  src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-</head>
-<body>
-    <div id='root'></div>
-    <script  type="text/babel">    
-    //react-dom bthuong
-        // const div1 = React.createElement(
-        //     'div', 
-        //     {
-        //         className :'item',
-        //     },
-        //     React.createElement('h2' ,{ title: 'hoc react'} , 'react js'),
-        //     React.createElement('p', null, 'học reactjs cơ bản đến nâng cao')    
-        // )
-        //get root
-        const root = document.querySelector('#root');
-        //dung jsx 
-         const div2 = <div>
-                <h2>hoc reactjs</h2>
-                <p>hoc tu co ban den nang cao</p>
-            </div> 
-        //render ui 
-        ReactDOM.render(div2, root);
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      //component comment
+      const Comment = () => {
+        return (
+          <div className="post-item">
+            <img
+              src="https://cdn.fullstack.edu.vn/f8-learning/blog_posts/551/614c35042358a.png"
+              alt="Docs JS tu co ban toi nang cao"
+            />
+            <h2 className="post-title">Docs JS tu co ban toi nang cao</h2>
+            <p className="post-desc">
+              Chao cac ban, day la mot trang docs JS hay nhat ma minh biet duoc
+              trong cac trang ve lap trinh
+            </p>
+            <p className="post-published">6 gio truoc</p>
+          </div>
+        );
+      };
+      //component app
+      const App = () => {
+        return (
+          <div class="wrapper">
+              <Comment />
+              <Comment />
+              <Comment />
+          </div>
+        )
+      }
+      ReactDOM.render(<App />, root);
     </script>
-</body>
+  </body>
 </html>
