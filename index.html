@@ -20,32 +20,49 @@
     <script type="text/babel">
       const root = document.getElementById("root");
       //component comment
-      const Comment = () => {
+      const Comment = (props) => {
+        const { title, image, decription, time,callback } = props;
         return (
           <div className="post-item">
-            <img
-              src="https://cdn.fullstack.edu.vn/f8-learning/blog_posts/551/614c35042358a.png"
-              alt="Docs JS tu co ban toi nang cao"
-            />
-            <h2 className="post-title">Docs JS tu co ban toi nang cao</h2>
-            <p className="post-desc">
-              Chao cac ban, day la mot trang docs JS hay nhat ma minh biet duoc
-              trong cac trang ve lap trinh
-            </p>
-            <p className="post-published">6 gio truoc</p>
+            <img src={image} alt={title} />
+            <h2 className="post-title">{title}</h2>
+            <p className="post-desc">{decription}</p>
+            <p className="post-published">{time}</p>
+            <p>{callback(Math.random())}</p>
           </div>
         );
       };
       //component app
       const App = () => {
         return (
-          <div class="wrapper">
-              <Comment />
-              <Comment />
-              <Comment />
+          <div className="wrapper">
+            <Comment
+              title="1 Docs JS tu co ban toi nang cao"
+              image="https://cdn.fullstack.edu.vn/f8-learning/blog_posts/551/614c35042358a.png"
+              decription=" 1 Chao cac ban, day la mot trang docs JS hay nhat ma minh biet duoc
+                      trong cac trang ve lap trinh"
+              time=" 1 6 gio truoc"
+              callback = {(number) => console.log(number)}
+            />
+            <Comment
+              title="2 Docs JS tu co ban toi nang cao"
+              image="https://cdn.fullstack.edu.vn/f8-learning/blog_posts/551/614c35042358a.png"
+              decription="2 Chao cac ban, day la mot trang docs JS hay nhat ma minh biet duoc
+                      trong cac trang ve lap trinh"
+              time="2 6 gio truoc"
+              callback = {(number) => console.log(number)}
+            />
+            <Comment
+              title="3 Docs JS tu co ban toi nang cao"
+              image="https://cdn.fullstack.edu.vn/f8-learning/blog_posts/551/614c35042358a.png"
+              decription="3 Chao cac ban, day la mot trang docs JS hay nhat ma minh biet duoc
+                      trong cac trang ve lap trinh"
+              time="3 6 gio truoc"
+              callback = {(number) => console.log(number)}
+            />
           </div>
-        )
-      }
+        );
+      };
       ReactDOM.render(<App />, root);
     </script>
   </body>
