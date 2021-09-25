@@ -30,10 +30,14 @@
       //component app
       //có thể gọi đc Form.input như component
       const App = () => {
-      
+
+        const type = "Checkbox";
+
+        const Component = Form[type];
+
         return (
           <div className="wrapper">
-                  <Form.Input />    
+                  <Component />    
           </div>
         );
       };
