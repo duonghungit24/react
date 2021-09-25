@@ -18,26 +18,34 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-    //tao object form , tạo ra checkbox, input type
-      const Form = {
-          Input() {
-            return <input />
-          },
-          Checkbox() {
-            return <input type="checkbox"/>
-          }
+      //custom button khi muon chuyen ve button or the a
+      const Button = ({title , href, onClick}) => {
+        let Component = "button";
+        const props = {};
+        if(href) {
+          Component = "a";
+          props.href = href;
+        }
+        if(onClick) {
+          Component = "button";
+          props.onClick = onClick;
+        }
+        return (
+          <Component {...props}>{title}</Component>
+        )
       }
       //component app
-      //có thể gọi đc Form.input như component
       const App = () => {
-
-        const type = "Checkbox";
-
-        const Component = Form[type];
-
+        const handleBtn = () => {
+             console.log(Math.random())
+        }
         return (
           <div className="wrapper">
-                  <Component />    
+                <Button  
+                    title = "Click here"
+                    href = "youtube.com"
+                    onClick={handleBtn}
+                />
           </div>
         );
       };
