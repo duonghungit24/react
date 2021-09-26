@@ -46,6 +46,11 @@
             </div>
         )
       }
+      //button
+      //children nhu duoc coi la props
+      const Button = ({children}) => {
+        return <button>{children}</button>
+      }
       //component app
       const App = () => {
       
@@ -56,6 +61,7 @@
                     type = "checkbox"
                     title = "Click here"
                 />
+                <Button>hello</Button>
           </div>
         );
       };
