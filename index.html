@@ -37,31 +37,22 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      //custom button khi muon chuyen ve button or the a
-      const Input = ({label, ...inputProps}) => {
-        return (
-            <div>
-                <label>{label}</label>
-                <input {...inputProps}/>
-            </div>
+      //render props
+      const List = ({data , children }) => {
+        return(
+            <ul>
+              {data.map((...props) => children(...props))}
+            </ul>
         )
-      }
-      //button
-      //children nhu duoc coi la props
-      const Button = ({children}) => {
-        return <button>{children}</button>
       }
       //component app
       const App = () => {
-      
+        const data = ['item 1', 'item 2', 'item 3','item 4']
         return (
           <div className="wrapper">
-                <Input  
-                    label="click me"
-                    type = "checkbox"
-                    title = "Click here"
-                />
-                <Button>hello</Button>
+               <List data ={data} >
+                {(item,index) => <li key={index}>{item}</li>}
+                </List>
           </div>
         );
       };
