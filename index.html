@@ -15,36 +15,46 @@
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
+  <style>
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+    }
+    .btn {
+      color: red;
+      outline: none;
+      border: 0;
+      padding: 5px;
+      border-radius: 20px;
+    }
+    .btn:hover {
+      background-color:beige;
+      color:royalblue;
+    }
+  </style>
   <body>
     <div id="root"></div>
     <script type="text/babel">
       //custom button khi muon chuyen ve button or the a
-      const Button = ({title , href, onClick}) => {
-        let Component = "button";
-        const props = {};
-        if(href) {
-          Component = "a";
-          props.href = href;
-        }
-        if(onClick) {
-          Component = "button";
-          props.onClick = onClick;
-        }
+      const Input = ({label, ...inputProps}) => {
         return (
-          <Component {...props}>{title}</Component>
+            <div>
+                <label>{label}</label>
+                <input {...inputProps}/>
+            </div>
         )
       }
       //component app
       const App = () => {
-        const handleBtn = () => {
-             console.log(Math.random())
-        }
+      
         return (
           <div className="wrapper">
-                <Button  
+                <Input  
+                    label="click me"
+                    type = "checkbox"
                     title = "Click here"
-                    href = "youtube.com"
-                    onClick={handleBtn}
                 />
           </div>
         );
